@@ -11,6 +11,7 @@ var React = require('react');
 var ReactPropTypes = React.PropTypes;
 var TodoActions = require('../actions/TodoActions');
 var TodoTextInput = require('./TodoTextInput.react');
+var TodoButton = require('./TodoButton.react');
 
 var cx = require('react/lib/cx');
 
@@ -65,10 +66,19 @@ var TodoItem = React.createClass({
             {todo.text}
           </label>
           <button className="destroy" onClick={this._onDestroyClick} />
+          <TodoButton
+           onCaseClick={this._onCaseClick}
+           buttonLabel="Case"
+           value={todo.text}
+            />
         </div>
         {input}
       </li>
     );
+  },
+
+  _onCaseClick: function(text) {
+    TodoActions.changeCase(this.props.todo.id, text);
   },
 
   _onToggleComplete: function() {

@@ -78,6 +78,14 @@ var TodoActions = {
     AppDispatcher.dispatch({
       actionType: TodoConstants.TODO_DESTROY_COMPLETED
     });
+  },
+
+  changeCase: function(id, text) {
+    AppDispatcher.dispatch({
+      actionType: TodoConstants.TODO_CHANGE_CASE,
+      id: id,
+      text: text
+    });
   }
 
 };
