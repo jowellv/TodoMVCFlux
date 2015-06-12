@@ -123,6 +123,13 @@ AppDispatcher.register(function(action) {
   var text;
 
   switch(action.actionType) {
+
+    case TodoConstants.TODO_CHANGE_CASE:
+      text = action.text.trim();
+      update(action.id, {text: text});
+      TodoStore.emitChange();
+      break;
+
     case TodoConstants.TODO_CREATE:
       text = action.text.trim();
       if (text !== '') {

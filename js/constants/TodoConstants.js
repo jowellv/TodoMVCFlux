@@ -12,6 +12,7 @@
 var keyMirror = require('keymirror');
 
 module.exports = keyMirror({
+  TODO_CHANGE_CASE: null,
   TODO_CREATE: null,
   TODO_COMPLETE: null,
   TODO_DESTROY: null,
